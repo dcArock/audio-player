@@ -14,7 +14,7 @@ http://dcarock.com/music/player3.html
 
 
 
-You can also import the #player div in your html page. Make shure to add the main.css and the player.js
+You can also import the #player div in your html page. Make sure to add the main.css and the player.js
 
 The share.html and about.html can be modified to your will
 
@@ -31,7 +31,7 @@ var data = {
 			'fileNameIsTrackName': true,      // if the file name of the track is also the title to be displayed
 			'coverIsAlsoBackground': false,   // if the cover image is also the background image for that track
 			'switchBackground': true,         // set to false if you only want one background
-			'showAnimatedDiscOnPlay': true,   // displayes a rotating disc wen a track is playing
+			'showAnimatedDiscOnPlay': true,   // displays a rotating disc wen a track is playing
 			'animation': true,                // display an cool animation, not compatible IE and firefox volume will be useless ( to fix )
 			'allowDownload': false,           // replaces the previous button with a download link
 			'randomByDefault': false,         // if your playlist should be played randomly on page load
