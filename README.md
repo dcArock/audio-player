@@ -5,15 +5,18 @@ HTML5 audio player with various settings to customize
 
 Examples of setups available :
 
+
 http://dcarock.com/music/player1.html
+
 http://dcarock.com/music/player2.html
+
 http://dcarock.com/music/player3.html
 
 
 
 You can also import the #player div in your html page. Make shure to add the main.css and the player.js
 
-
+The share.html and about.html can be modified to your will
 
 
 
