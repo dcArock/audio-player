@@ -1,72 +1,208 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>myHTML5audio.js by dcArock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <title>myHTML5audio.js by dcArock</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
+    <header>
+      <div class="inner">
         <h1>myHTML5audio.js</h1>
-        <p>HTML5 audio player with various settings to customize</p>
+        <h2>HTML5 audio player with various settings to customize</h2>
+        <a href="https://github.com/dcArock/audio-player" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
 
-        <p class="view"><a href="https://github.com/dcArock/audio-player">View the Project on GitHub <small>dcArock/audio-player</small></a></p>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="audio-player" class="anchor" href="#audio-player"><span class="octicon octicon-link"></span></a>audio-player</h1>
+
+<p>HTML5 audio player with various settings to customize</p>
+
+<p>Examples of setups available :</p>
+
+<p><a href="http://dcarock.com/music/player1.html">http://dcarock.com/music/player1.html</a></p>
+
+<p><a href="http://dcarock.com/music/player2.html">http://dcarock.com/music/player2.html</a></p>
+
+<p><a href="http://dcarock.com/music/player3.html">http://dcarock.com/music/player3.html</a></p>
+
+<p>You can also import the #player div in your html page. Make shure to add the main.css and the player.js</p>
+
+<p>The share.html and about.html can be modified to your will</p>
+
+<p>Available options : ( on the html page before including player.js )</p>
+
+<p>var data = {</p>
+
+<pre><code>        // basic settings
+
+        'autoplay': true,                 // if the track should play when the page is loaded
+        'fileNameIsTrackName': true,      // if the file name of the track is also the title to be displayed
+        'coverIsAlsoBackground': false,   // if the cover image is also the background image for that track
+        'switchBackground': true,         // set to false if you only want one background
+        'showAnimatedDiscOnPlay': true,   // displayes a rotating disc wen a track is playing
+        'animation': true,                // display an cool animation, not compatible IE and firefox volume will be useless ( to fix )
+        'allowDownload': false,           // replaces the previous button with a download link
+        'randomByDefault': false,         // if your playlist should be played randomly on page load
+        'phoneBreakpoint': 480,           // what width do you want your menu / playlist to adjust to small devices
+
+        // formats
+        'fileType': 'mp3',                // the filetype of you tracks ( mp3 / ogg / wav )
+
+        // Paths
+        'pathToMusic': 'tracks/',         // path to your audio files
+        'pathToCovers': 'img/covers/',    // path to your covers images
+        'pathToBg': 'img/bg/',            // path to your background images       
 
 
-        <ul>
-          <li><a href="https://github.com/dcArock/audio-player/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/dcArock/audio-player/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/dcArock/audio-player">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a name="-welcome-to-github-pages" class="anchor" href="#-welcome-to-github-pages"><span class="octicon octicon-link"></span></a>### Welcome to GitHub Pages.</h1>
+        // Playlist styles
+        'fontSizeDesktop': 16,            // in pixels, for all icons in the menu
+        'fontSizePhone': 12,              
+        'fontColor': 'white',             // can be hex or rgba values, for the playlist track names
+        'iconsColor': 'white',            // for the menu
+        'iconsColorSecondMenu': 'white',  // for the second menu   
+        'iconSize': 'small',              // tiny, small, regular (30px) or large
 
-<h1>
-<a name="this-automatic-page-generator-is-the-easiest-way-to-create-beautiful-pages-for-all-of-your-projects-author-your-page-content-here-using-github-flavored-markdown-select-a-template-crafted-by-a-designer-and-publish-after-your-page-is-generated-you-can-check-out-the-new-branch" class="anchor" href="#this-automatic-page-generator-is-the-easiest-way-to-create-beautiful-pages-for-all-of-your-projects-author-your-page-content-here-using-github-flavored-markdown-select-a-template-crafted-by-a-designer-and-publish-after-your-page-is-generated-you-can-check-out-the-new-branch"><span class="octicon octicon-link"></span></a>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</h1>
+        'menuStyle': 1,                   // 1 or 2, different progress bar styles 
+        'menuPadding': 1,                 // from 1 to 4, 1: small, 2:medium, 3:big, 4:bigger
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+
+        // Styles
+        'backgroundOpacity': 1,           // from 0 to 1
+        'backgroundBlur': '0',            // Must be in px ( 5px for example ), not IE compatible, Firefox set to 5px blur
+
+        'textBackground': false,          // if the track title should have a background
+        'textBackgroundPadding': '.4em',  // its size, can be in px, em ...
+        'textBackgroundColor': 'rgba(0,0,0,.1)',
+
+        'playlistBackground': false,      // true will display a background behind the playlist
+        'playlistBackgroundColor': 'rgba(255,255,255,.25)',
+
+        // Color
+        'rgbaColors': true,               // for the next settings, set to true or false for hex values
+
+        'menuOpacity': 0.25,              // opacity of the primary menu
+        'menuColor': '0,0,0',             // it color, here in rgba ( the alpha channel is it's opacity value on top )       
+
+        'secondMenuOpacity': 0.25,
+        'secondMenuColor': '0,0,0',
+
+        'progressBackColor': '255,255,255',
+        'progressBackOpacity': '0.05',
+        'progressFillColor': '255,255,255',
+        'progressFillOpacity': '0.75',
+
+        'volumeSliderColor': 'rgba(255,255,255,.25)',    // rgba
+        'volumeSliderOpacity': '0.75',                   // rgba
+
+        // About page
+        'aboutPageBackgroundColor': 'rgba(0,0,0,.95)',   
+        'aboutPageTextColor': 'white',
+
+        // About page
+        'sharePageBackgroundColor': 'rgba(255,255,255,.95)',
+        'sharePageCloseColor': '#131313'
+    },
+
+                                        // Exact ( case sensitive ) filename of audio files
+    tracks = [
+
+        'Triptamine',
+        'Shifts',
+        'Drowning in Time',
+        'Glitch',
+        'Oxidation',
+        'Harmony',
+        '8\'s &amp; 0\'s',
+        'Golden God'
+
+    ],
+
+                                       // in order with tracks[], names to be displayed for each track
+    trackNames = [
+
+        'Triptamine - Chris Arock - 2014',
+        'Shifts - IGNition',
+        'Drowning in Time - projection',
+        'Glitch - work in progress',
+        'Oxidation',
+        'Harmony',
+        '8\'s &amp; 0\'s',
+        'Golden God'
+
+    ],
+
+                                     // covers for each track, in order with tracks[], case sensitive
+    covers = [
+
+        '1.jpg',
+        '2.jpg',
+        '3.jpg',
+        '4.jpg',
+        '5.jpg',
+        '6.jpg',
+        '7.jpg',
+        '8.jpg'
+
+    ],
+
+    bg = [
+
+        '1.jpg',
+        '2.jpg',
+        '3.jpg',
+        '4.jpg',
+        '5.jpg',
+        '6.jpg',
+        '7.jpg',
+        '8.jpg'
+
+    ];
 </code></pre>
+        </section>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+        <aside id="sidebar">
+          <a href="https://github.com/dcArock/audio-player/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/dcArock/audio-player/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+          <p class="repo-owner"><a href="https://github.com/dcArock/audio-player"></a> is maintained by <a href="https://github.com/dcArock">dcArock</a>.</p>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/dcArock">dcArock</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-48793534-4");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>
