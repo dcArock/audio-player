@@ -1,0 +1,157 @@
+// default
+.progress-bar {
+	
+	height: 10px;
+	width: 100%;
+	
+	margin: 0;
+	
+	position: relative;
+	
+	top: -8px;
+
+	.progress {
+	
+		height: 10px;
+		width: 1px;
+		
+		position: relative;
+		
+	}
+	
+}
+
+span {
+	
+	margin: auto;
+	
+	display: block;
+	
+	transform: translateZ(0);
+	
+	text-align: center;
+	
+	position: relative;
+	
+//	top: 8px;
+	
+	cursor: pointer;
+	
+}
+
+.icon {
+
+//	height: 30px;
+//	width: 30px;
+	
+	z-index: 99;
+	
+	position: relative;
+	
+	&:hover {
+	
+		opacity: .5;
+		
+	}
+	
+}
+
+.wide-img:hover {
+
+	transform: scale(2)
+	
+}
+
+.icon.small {
+	
+	font-size: 20px;
+	
+	line-height: 20px;
+
+//	height: 20px;
+//	width: 20px;
+	
+	top: 5px;
+	
+}
+
+.icon.tiny {
+	
+	font-size: 15px;
+	
+	line-height: 15px;
+
+//	height: 15px;
+//	width: 15px;
+	
+	top: 8px;
+	
+}
+
+.icon.regular {
+
+//	height: 30px;
+//	width: 30px;
+	
+	font-size: 30px;
+	
+	line-height: 30px;
+	
+}
+
+.icon.large {
+	
+	font-size: 40px;
+	
+	line-height: 40px;
+
+//	height: 40px;
+//	width: 40px;
+	
+	top: -5px;
+	
+}
+
+
+
+
+
+
+// style 2
+.progression-container.style-2 {
+
+	position: absolute;
+	
+	@include full(0);
+	
+	z-index: -1;
+	
+}
+
+.progress-bar.style-2 {
+	
+	position: absolute;
+	
+	height: 100%;
+	
+	@include full(0);
+
+	.progress {
+	
+		height: 100%;
+		
+		position: absolute;
+		
+		top: 0;
+		left: 0;
+		bottom: 0;
+		
+	}
+	
+}
+
+input#seekslider.style-2 {
+	
+	opacity: 1;
+	
+}

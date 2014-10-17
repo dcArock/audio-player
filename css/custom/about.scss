@@ -1,0 +1,39 @@
+#about {
+	
+	.about-logo {
+	
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		
+		width: 160px;
+		height: 200px;
+		
+		margin-left: -80px;
+		margin-top: -100px;
+		
+		img {
+		
+			width: 160px;
+			height: auto;
+			
+			}
+		
+		}
+}
+
+.about-close {
+
+	position: absolute;
+	bottom: 25px;
+	right: 25px;
+	
+	
+	svg {
+	
+		height: 50px;
+		width: 50px;
+		
+		}
+	
+	}

@@ -1,0 +1,67 @@
+#loader {
+
+	position: absolute;
+	
+	@include full(0);
+	
+	background: black;
+	
+	z-index: 9999999999;
+	
+	.loading-progress {
+	
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 10px;
+		background: white;
+		
+	}
+	
+}
+
+#playlist-loader {
+
+	position: absolute;
+	
+	@include full(0);
+	
+	z-index: 1;
+	
+}
+
+.cube {
+
+	position: absolute;
+	
+	top: 50%;
+	left: 50%;
+	
+	width: 100px;
+	height: 100px;
+	
+	margin-left: -50px;
+	margin-top: -50px;
+	
+	border: 2px solid white;
+	
+	transition: .25s all ease;
+	
+	opacity: 0;
+	
+}
+
+.cube.loading {
+	
+	animation: loading 1s infinite;
+	opacity: 1;
+	
+}
+
+@keyframes loading {
+
+	0% { transform: rotate(360deg); border-radius: 0 }
+	50% { transform: rotate(180deg); border-radius: 50%; background: white;}
+	100% { transform: rotate(360deg); border-radius: 0}
+	
+}

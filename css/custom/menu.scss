@@ -1,0 +1,134 @@
+#menu {
+
+//	@include rgba-black(.25);
+	
+	padding: 25px 0;
+	
+}
+
+#menu-2 {
+
+//	@include rgba-black(.1);
+	
+	padding: 10px 0;
+	
+	
+}
+
+.active-button {
+
+	border: 1px solid black;
+	
+}
+
+.track-clock {
+	
+	text-align: center;
+
+	color: white;
+	
+	position: relative;
+	
+	top: 6px;
+	
+	div {
+		
+//		font-family: 'Lucida', monospace;
+		
+		font-size: 10px;
+	
+		display: inline;
+		text-align: center;
+		
+	}
+	
+}
+
+
+// style variant padding #2
+
+#menu.padding-2 {
+
+	padding: 10px 0;
+	
+	height: 50px;
+	
+}
+
+#menu-2.padding-2 {
+
+	bottom: 50px;
+	
+}
+
+#playlist.padding-2 {
+	
+	bottom: 100px;
+
+	
+}
+
+#about.padding-2 {
+	
+	bottom: 100px;
+	
+}
+
+
+// style variant padding #3
+
+#menu.padding-3 {
+
+	padding: 40px 0;
+	
+	height: 100px;
+	
+}
+
+#menu-2.padding-3 {
+
+	bottom: 100px;
+	
+}
+
+#playlist.padding-3 {
+	
+	bottom: 150px;
+
+	
+}
+
+#about.padding-3 {
+	
+	bottom: 150px;
+	
+}
+
+// style variant padding #3
+
+#menu.padding-4 {
+
+	padding: 65px 0;
+	
+	height: 150px;
+	
+}
+
+#menu-2.padding-4 {
+
+	bottom: 150px;
+	
+}
+
+#playlist.padding-4 {
+	
+	bottom: 200px;
+
+	
+}
+
+#about.padding-4 {
+	
+	bottom: 200px;
+	
+}

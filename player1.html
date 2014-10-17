@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>aRock Player</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui" user-scalable="no">
+	
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+	<meta name="apple-mobile-web-app-title" content="Chris Arock">
+	<link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+	<meta name="application-name" content="Chris Arock">
+
+
+	<link rel="stylesheet" href="css/main.css">
+
+	<script src="js/vendor/prefixfree.min.js"></script>
+
+	<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	
+
+</head>
+
+<body>
+	
+	<!--[if lt IE 8]>
+      <p class="browsehappy">Vous utulisez un navigateur internet <strong>ancestral</strong>. S'il vous plait <a href="http://browsehappy.com/">faites une mise a jour</a> afin d'etre compatible avec les sites web modernes.</p>
+    <![endif]-->
+
+
+	<div id="loader">
+		<div class="loading-progress"></div>
+		<div class="cube loading"></div>
+	</div>
+
+	<div id="player">
+
+		<div id="playlist-loader">
+	<div class="cube"></div>
+</div>
+
+<div class="animation-svg">
+	<div class="svg">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+			<path fill="#fff" d="M32 4.695c-15.055 0-27.305 12.247-27.305 27.305 0 15.055 12.25 27.305 27.305 27.305s27.305-12.25 27.305-27.305c0-15.058-12.25-27.305-27.305-27.305zm0 52.635c-13.968 0-25.33-11.364-25.33-25.33 0-13.968 11.362-25.33 25.33-25.33 13.966 0 25.327 11.362 25.327 25.33 0 13.966-11.361 25.33-25.327 25.33zM32 22.225c-5.392 0-9.778 4.383-9.778 9.775 0 5.389 4.386 9.775 9.778 9.775 5.389 0 9.775-4.387 9.775-9.775 0-5.392-4.386-9.775-9.775-9.775zm0 17.576c-4.303 0-7.8-3.501-7.8-7.801 0-4.303 3.498-7.8 7.8-7.8 4.3 0 7.801 3.498 7.801 7.8 0 4.3-3.501 7.801-7.801 7.801zM27.278 53.424l-.098-10.2-7.749 6.746s3.159 3.454 7.847 3.454z" />
+		</svg>
+	</div>
+</div>
+
+<div id="background">
+
+
+
+	<!-- SVG filter for Firefox  -->
+	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<defs>
+			<filter id="blur">
+				<feGaussianBlur stdDeviation="5" />
+			</filter>
+		</defs>
+	</svg>
+
+</div>
+
+<div class="animation-holder">
+	<canvas id="animation"></canvas>
+</div>
+
+
+
+<!-- PLAYLIST -->
+<div id="playlist">
+
+	<!-- TRACK COL FILLED BY JS-->
+	<div class="kill-scroll">
+
+		<div class="col-playlist-center" id="playlist-holder"></div>
+
+		<div class="spacer"></div>
+
+	</div>
+
+
+	<!-- /PLAYLIST -->
+</div>
+
+
+<!-- MENU -->
+<div id="menu">
+
+	<div class="row">
+
+		<!-- LEFT -->
+		<div class="col-menu-left">
+
+			<div class="row max-150">
+
+				<!-- DOWNLOAD  -->
+				<div class="col-33" id="download-container">
+					<a href="" id="download-anchor">
+
+						<span class="icon-download centered icon" id="download-button" title="Download this track">&#xe601</span>
+
+					</a>
+
+					<span class="icon-previous centered icon hidden" id="download-button" title="Previous">&#xe60c</span>
+
+				</div>
+				<!-- PLAY -->
+				<div class="col-33">
+
+					<span class="icon-play centered icon" id="play-button" title="Play / Pause">&#xe60a</span>
+
+				</div>
+
+				<!-- NEXT -->
+				<div class="col-33">
+
+					<span class="icon-next centered icon" id="next-button" title="Next">&#xe608</span>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- CENTER -->
+		<div class="col-menu-center">
+
+			<input id="seekslider" type="range" min="0" max="100" value="0" step="1">
+
+			<div class="progression-container">
+
+
+
+				<!-- Track Progression -->
+				<div class="">
+
+					<div class="progress-bar">
+
+						<div class="progress"></div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- RIGHT -->
+		<div class="col-menu-right">
+
+			<div class="row max-200">
+
+				<!-- volume -->
+				<div class="col-33">
+
+					<!-- Share icon -->
+					<span class="icon-heart centered icon" id="heart-button" title="Share">&#xe603</span>
+
+
+
+				</div>
+
+
+				<div class="col-33">
+
+					<!-- VOLUME ICON --><span class="icon-volume centered icon" id="volume-button" title="Mute">&#xe60f</span>	
+
+				</div>
+
+
+				<div class="col-33">
+
+					<!-- MENU ICON -->
+					<span class="icon-menu centered icon" id="menu-button" title="Open Menu">&#xe607</span>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- /MENU -->
+</div>
+
+<div id="menu-2">
+
+	<!-- TOOLS & LOGO COL -->
+	<div class="menu-2-tools">
+
+		<div class="row">
+
+			<!-- Tools -->
+			<div class="col-menu-left">
+
+				<div class="row max-150">
+
+
+
+					<div class="col-33">
+
+						<span class="icon-random centered icon" id="random-button" title="Random on/off ">&#xe60d</span>
+
+					</div>
+
+					<div class="col-33">
+						<span class="icon-help centered icon" id="about-button" title="About">&#xe611</span>
+					</div>
+
+					<div class="col-33">
+						<!--    									<span class="icon-logo centered icon" id="logo-button">&#xe606</span> -->
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- Empty -->
+			<div class="col-menu-center">
+
+				<div class="track-clock">
+
+					<div class="track-current-time"></div>
+
+					<div>&zwnj;/&zwnj;</div>
+					<div class="track-duration"></div>
+				</div>
+
+			</div>
+
+			<!-- Right tools second menu -->
+			<div class="col-menu-right">
+
+				<div class="row max-200 moz-hidden">
+
+					<div class="col-33">
+
+						<span class="icon-bars centered icon" id="" title="Volume">&#xe600</span>
+
+					</div>
+
+					<div class="col-66">
+						<input id="volumeslider" type="range" min="0" max="100" value="100" step="5">
+					</div>
+
+				</div>
+
+
+
+			</div>
+
+		</div>
+
+
+	</div>
+	<!-- /TOOLS AND LOGO  -->
+
+</div>
+
+
+
+<div id="about">
+
+	<div class="about-container">
+
+	</div>
+
+</div>
+
+<div id="share">
+
+	<div class="share-container">
+
+	</div>
+
+</div>
+
+
+	</div>
+
+
+	<script type="text/javascript">
+		
+		
+		var data = {
+
+			// basic settings
+			'autoplay': true,
+			'fileNameIsTrackName': true,
+			'coverIsAlsoBackground': false,
+			// if backgrounds
+			'switchBackground': true,
+			'showAnimatedDiscOnPlay': true,
+			// if animation
+			'animation': false, // if true, then overide backgrounds, not compatible IE
+			'allowDownload': false,
+			'randomByDefault': false,
+			'phoneBreakpoint': 480,
+
+			// formats
+			'fileType': 'mp3',
+
+			// Paths
+			'pathToMusic': 'tracks/',
+			'pathToCovers': 'img/1/covers/',
+			'pathToBg': 'img/1/bg/',
+
+
+			// Playlist styles
+			'fontSizeDesktop': 16,
+			'fontSizePhone': 12,
+			'fontColor': 'white', // hex color or full rgba
+			'iconsColor': 'white',
+			'iconsColorSecondMenu': 'white',
+			'iconSize': 'small', // tiny, small, regular (30px) or large
+
+			'menuStyle': 1, // 1 or 2 
+			'menuPadding': 1, // from 1 to 4, 1: small, 2:medium, 3:big, 4:bigger
+
+
+			// Styles
+			'backgroundOpacity': 1,
+			'backgroundBlur': '0', // Must be in px, not IE compatible, Firefox limited to 5px blur
+
+			'textBackground': false,
+			'textBackgroundPadding': '.4em',
+			'textBackgroundColor': 'rgba(0,0,0,.1)',
+
+			'playlistBackground': false,
+			'playlistBackgroundColor': 'rgba(0,0,0,.75)',
+
+			// Color / opacity of menu
+			'rgbaColors': true,
+
+			'menuOpacity': 0.25,
+			'menuColor': '0,0,0',
+
+			'secondMenuOpacity': 0.75,
+			'secondMenuColor': '0,0,0',
+
+			'progressBackColor': '255,255,255',
+			'progressBackOpacity': '0.05',
+			'progressFillColor': '255,255,255',
+			'progressFillOpacity': '0.75',
+
+			'volumeSliderColor': 'rgba(255,255,255,.25)', // rgba
+			'volumeSliderOpacity': '0.75', // rgba
+
+			// About page
+			'aboutPageBackgroundColor': 'rgba(0,0,0,.95)',
+			'aboutPageTextColor': 'white',
+
+			// About page
+			'sharePageBackgroundColor': 'rgba(255,255,255,.9)',
+			'sharePageCloseColor': '#131313'
+		},
+
+		// Exact ( case sensitive ) filename of audio files
+		tracks = [
+
+			'Triptamine',
+			'Shifts',
+			'Drowning in Time',
+			'Glitch',
+			'Oxidation',
+			'Harmony',
+			'8\'s & 0\'s',
+			'Golden God'
+
+		],
+
+		// in order with tracks[], names to be displayed for each track
+		trackNames = [
+
+			'shamanique',
+			'Alic - Proper Language',
+			'Basket Case'
+
+		],
+
+		// covers for each track, in order with tracks[]
+		covers = [
+
+			'1.jpg',
+			'2.jpg',
+			'3.jpg',
+			'4.jpg',
+			'5.jpg',
+			'6.jpg',
+			'7.jpg',
+			'8.jpg'
+			
+		],
+
+		bg = [
+
+			'1.jpg',
+			'2.jpg',
+			'3.jpg',
+			'4.jpg',
+			'5.jpg',
+			'6.jpg',
+			'7.jpg',
+			'8.jpg'
+
+		];
+		
+		
+	</script>
+
+
+<!--	    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+
+	<script>
+		window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')
+	</script>
+
+	<script src="js/vendor/social.js"></script>
+
+	<script src="js/vendor/svgInjector.js"></script>
+
+	<script src="js/player.js"></script>
+
+
+</body>
+
+</html>

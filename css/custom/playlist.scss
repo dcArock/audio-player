@@ -1,0 +1,113 @@
+body {
+
+	-ms-overflow-style: none;
+	-moz-overflow-style: none;
+	
+}
+
+.kill-scroll {
+
+
+	
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+
+
+#playlist {
+	
+	overflow-y: scroll;
+
+	.track {
+		
+		border-bottom: 1px solid $white;
+		
+		height: 100px;
+		
+		z-index: 9;
+	
+		.track-img {
+			
+			padding: 10px;
+			
+			height: 100px;
+			
+			width: 100px;
+			
+			margin: auto;
+		
+			img {
+				
+				width: 80px;
+				
+				height: 80px;
+				
+				cursor: pointer;
+				
+				&:hover {
+					
+					transform: scale(1.5)
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	.track-active:after{
+			
+		content: '';
+
+		position: relative;
+		
+		display: block;
+		
+		top: -70px;
+		
+		left: 15px;
+
+		height: 50px;
+
+		width: 50px;
+
+		background: url('../img/icons/playing.svg');
+		
+		background-repeat: no-repeat;
+		
+		background-size: cover;
+
+		z-index: 99;
+		
+		animation: animation 1s infinite ease-in-out;
+
+	}
+	
+	.track-text {
+		
+		height: 100px;
+		
+		padding: 40px 0;
+		
+		cursor: pointer;
+		
+	}
+	
+	.track-text.with-background p {
+	
+		background: rgba(255,255,255,.25)
+		
+	}
+	
+}
+
+@keyframes animation {
+
+	from {transform: rotate(0)}
+	to {transform: rotate(360deg)}
+	
+}

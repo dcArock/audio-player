@@ -1,0 +1,55 @@
+#animation {
+
+	height: 100%;
+	width: 100%;
+	
+}
+
+.animation-holder {
+
+	position: absolute;
+	
+	@include full(0);
+	
+	z-index: 2;
+	
+}
+
+.animation-svg {
+	
+	position: absolute;
+
+	@include full(0);
+	
+	z-index: 1;
+	
+	.svg {
+	
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		
+		width: 200px;
+		height: 200px;
+		
+		margin-left: -100px;
+		margin-top: -100px;
+		
+		opacity: 1;
+		
+		svg {
+			
+			height: 200px;
+			width: 200px;
+			
+		}
+		
+	}
+
+}
+
+.animation-svg.playing svg {
+	
+	animation: animation 2s infinite ease-in-out;
+
+}

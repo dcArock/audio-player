@@ -1,0 +1,241 @@
+<div id="playlist-loader">
+	<div class="cube"></div>
+</div>
+
+<div class="animation-svg">
+	<div class="svg">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+			<path fill="#fff" d="M32 4.695c-15.055 0-27.305 12.247-27.305 27.305 0 15.055 12.25 27.305 27.305 27.305s27.305-12.25 27.305-27.305c0-15.058-12.25-27.305-27.305-27.305zm0 52.635c-13.968 0-25.33-11.364-25.33-25.33 0-13.968 11.362-25.33 25.33-25.33 13.966 0 25.327 11.362 25.327 25.33 0 13.966-11.361 25.33-25.327 25.33zM32 22.225c-5.392 0-9.778 4.383-9.778 9.775 0 5.389 4.386 9.775 9.778 9.775 5.389 0 9.775-4.387 9.775-9.775 0-5.392-4.386-9.775-9.775-9.775zm0 17.576c-4.303 0-7.8-3.501-7.8-7.801 0-4.303 3.498-7.8 7.8-7.8 4.3 0 7.801 3.498 7.801 7.8 0 4.3-3.501 7.801-7.801 7.801zM27.278 53.424l-.098-10.2-7.749 6.746s3.159 3.454 7.847 3.454z" />
+		</svg>
+	</div>
+</div>
+
+<div id="background">
+
+
+
+	<!-- SVG filter for Firefox  -->
+	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<defs>
+			<filter id="blur">
+				<feGaussianBlur stdDeviation="5" />
+			</filter>
+		</defs>
+	</svg>
+
+</div>
+
+<div class="animation-holder">
+	<canvas id="animation"></canvas>
+</div>
+
+
+
+<!-- PLAYLIST -->
+<div id="playlist">
+
+	<!-- TRACK COL FILLED BY JS-->
+	<div class="kill-scroll">
+
+		<div class="col-playlist-center" id="playlist-holder"></div>
+
+		<div class="spacer"></div>
+
+	</div>
+
+
+	<!-- /PLAYLIST -->
+</div>
+
+
+<!-- MENU -->
+<div id="menu">
+
+	<div class="row">
+
+		<!-- LEFT -->
+		<div class="col-menu-left">
+
+			<div class="row max-150">
+
+				<!-- DOWNLOAD  -->
+				<div class="col-33" id="download-container">
+					<a href="" id="download-anchor">
+
+						<span class="icon-download centered icon" id="download-button" title="Download this track">&#xe601</span>
+
+					</a>
+
+					<span class="icon-previous centered icon hidden" id="download-button" title="Previous">&#xe60c</span>
+
+				</div>
+				<!-- PLAY -->
+				<div class="col-33">
+
+					<span class="icon-play centered icon" id="play-button" title="Play / Pause">&#xe60a</span>
+
+				</div>
+
+				<!-- NEXT -->
+				<div class="col-33">
+
+					<span class="icon-next centered icon" id="next-button" title="Next">&#xe608</span>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- CENTER -->
+		<div class="col-menu-center">
+
+			<input id="seekslider" type="range" min="0" max="100" value="0" step="1">
+
+			<div class="progression-container">
+
+
+
+				<!-- Track Progression -->
+				<div class="">
+
+					<div class="progress-bar">
+
+						<div class="progress"></div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- RIGHT -->
+		<div class="col-menu-right">
+
+			<div class="row max-200">
+
+				<!-- volume -->
+				<div class="col-33">
+
+					<!-- Share icon -->
+					<span class="icon-heart centered icon" id="heart-button" title="Share">&#xe603</span>
+
+
+
+				</div>
+
+
+				<div class="col-33">
+
+					<!-- VOLUME ICON --><span class="icon-volume centered icon" id="volume-button" title="Mute">&#xe60f</span>	
+
+				</div>
+
+
+				<div class="col-33">
+
+					<!-- MENU ICON -->
+					<span class="icon-menu centered icon" id="menu-button" title="Open Menu">&#xe607</span>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- /MENU -->
+</div>
+
+<div id="menu-2">
+
+	<!-- TOOLS & LOGO COL -->
+	<div class="menu-2-tools">
+
+		<div class="row">
+
+			<!-- Tools -->
+			<div class="col-menu-left">
+
+				<div class="row max-150">
+
+
+
+					<div class="col-33">
+
+						<span class="icon-random centered icon" id="random-button" title="Random on/off ">&#xe611</span>
+
+					</div>
+
+					<div class="col-33">
+						<span class="icon-help centered icon" id="about-button" title="About">&#xe604</span>
+					</div>
+
+					<div class="col-33">
+						<!--    									<span class="icon-logo centered icon" id="logo-button">&#xe606</span> -->
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- Empty -->
+			<div class="col-menu-center">
+
+				<div class="track-clock">
+
+					<div class="track-current-time"></div>
+
+					<div>&zwnj;/&zwnj;</div>
+					<div class="track-duration"></div>
+				</div>
+
+			</div>
+
+			<!-- Right tools second menu -->
+			<div class="col-menu-right">
+
+				<div class="row max-200 moz-hidden">
+
+					<div class="col-33">
+
+						<span class="icon-bars centered icon" id="" title="Volume">&#xe600</span>
+
+					</div>
+
+					<div class="col-66">
+						<input id="volumeslider" type="range" min="0" max="100" value="100" step="5">
+					</div>
+
+				</div>
+
+
+
+			</div>
+
+		</div>
+
+
+	</div>
+	<!-- /TOOLS AND LOGO  -->
+
+</div>
+
+
+
+<div id="about">
+
+	<div class="about-container">
+
+	</div>
+
+</div>
+
+<div id="share">
+
+	<div class="share-container">
+
+	</div>
+
+</div>

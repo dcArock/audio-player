@@ -1,0 +1,44 @@
+/* 
+
+Mixin
+
+*/
+
+@mixin full($xx) {
+
+	top: $xx;
+	left: $xx;
+	right: $xx;
+	bottom: $xx;
+	
+}
+
+@mixin rgba-black($xx) {
+
+	background: rgba(0,0,0,$xx)
+	
+}
+
+@mixin rgba-white($xx) {
+
+	background: rgba(255,255,255,$xx)
+	
+}
+
+@mixin background-image($xx) {
+		
+	background: url('../img/covers/' + $xx + '.jpg');
+	
+	background-repeat: no-repeat;
+	
+	background-position: center;
+	
+	background-attachment: fixed;
+	
+	background-size: cover;
+	
+	opacity: .5;
+	
+	-webkit-filter: blur(5px);
+	
+}
